@@ -64,7 +64,10 @@ Ensure you have Java 21 installed, and run the following command in the root dir
     * If not the case content field in db can be changed to varchar(whatever size we want)
 * **Tradeoffs:** 
   * spring.jpa.hibernate.ddl-auto=update was used to automatically generate the database schema for the sake of simplicity and quick local setup. **I WOULD NOT USE THIS IN A PRODUCTION ENVIRONMENT.**
+  * Everyone is allowed to see all notes
+    * Since I did not implement authorization there's no concept of "my notes" and "your notes"
 * **Future Improvements:** 
   * Add pagination for when data set gets too large to fetch all at once
   * Implement a caching solution for frequently accessed notes. 
   * Add authentication and spring security
+  * Updates tracking could be improved if rollbacks to previous note versions is deemed necessary
